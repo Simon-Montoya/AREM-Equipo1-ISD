@@ -1,0 +1,94 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0">
+  <diagram id="isd-facturas" name="Registro de Facturas - ISD Colombia">
+    <mxGraphModel dx="2211" dy="1420" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1750" pageHeight="620" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pool1" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=30;horizontal=0;fontSize=14;fontStyle=1;fillColor=#ffffff;strokeColor=#000000;" value="Proceso de Recepcion y Registro de Facturas - ISD Colombia" vertex="1">
+          <mxGeometry height="540" width="1700" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="laneTecnico" parent="pool1" style="swimlane;whiteSpace=wrap;html=1;startSize=30;horizontal=0;fontSize=12;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#ffffff;" value="Tecnico / Operario" vertex="1">
+          <mxGeometry height="270" width="1700" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="startEvent" parent="laneTecnico" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=#ffffff;" value="Tecnico/operario adquiere producto o servicio con un proveedor" vertex="1">
+          <mxGeometry height="40" width="40" x="60" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="taskSolicitarFE" parent="laneTecnico" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="Solicitar factura electronica al proveedor" vertex="1">
+          <mxGeometry height="60" width="170" x="150" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway1" parent="laneTecnico" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" value="¿El proveedor tiene factura electronica?" vertex="1">
+          <mxGeometry height="80" width="80" x="350" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="taskEnviarCorreo" parent="laneTecnico" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="Enviar factura electronica por correo a la gerente" vertex="1">
+          <mxGeometry height="60" width="190" x="480" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="taskSolicitarFisica" parent="laneTecnico" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="Solicitar factura fisica al proveedor" vertex="1">
+          <mxGeometry height="60" width="170" x="480" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="taskEntregarFisica" parent="laneTecnico" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="Entregar factura fisica a la gerente" vertex="1">
+          <mxGeometry height="60" width="190" x="700" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="laneTecnico" source="startEvent" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="taskSolicitarFE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="laneTecnico" source="taskSolicitarFE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="gateway1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="laneTecnico" source="gateway1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;" target="taskEnviarCorreo" value="Si">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="laneTecnico" source="gateway1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="taskSolicitarFisica" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="laneTecnico" source="taskSolicitarFisica" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="taskEntregarFisica">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="laneGerente" parent="pool1" style="swimlane;whiteSpace=wrap;html=1;startSize=30;horizontal=0;fontSize=12;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#ffffff;" value="Gerente" vertex="1">
+          <mxGeometry height="240" width="1700" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="taskRecibir" parent="laneGerente" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="Recibir factura (por correo o de forma fisica)" vertex="1">
+          <mxGeometry height="60" width="180" x="960" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway2" parent="laneGerente" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" value="¿La factura es electronica?" vertex="1">
+          <mxGeometry height="80" width="80" x="1160" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="taskImprimir" parent="laneGerente" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="Imprimir la factura electronica" vertex="1">
+          <mxGeometry height="60" width="160" x="1300" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="taskRegistrar" parent="laneGerente" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="Registrar la factura manualmente en SIIGO (una por una)" vertex="1">
+          <mxGeometry height="60" width="200" x="1490" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="endEvent" parent="laneGerente" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;fontSize=10;verticalLabelPosition=bottom;verticalAlign=top;labelBackgroundColor=#ffffff;" value="Factura registrada en SIIGO" vertex="1">
+          <mxGeometry height="40" width="40" x="1620" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="laneGerente" source="taskRecibir" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="gateway2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="laneGerente" source="gateway2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="taskImprimir" value="Si">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="laneGerente" source="taskImprimir" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="taskRegistrar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" edge="1" parent="laneGerente" source="gateway2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;" target="taskRegistrar" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge10" edge="1" parent="laneGerente" source="taskRegistrar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="endEvent">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edgeCross1" edge="1" parent="1" source="taskEnviarCorreo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.004;entryY=0.339;entryDx=0;entryDy=0;entryPerimeter=0;" target="taskRecibir">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="970.09" y="180.02" />
+              <mxPoint x="970.09" y="419.98" />
+              <mxPoint x="990.7" y="419.98" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edgeCross2" edge="1" parent="1" source="taskEntregarFisica" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" target="taskRecibir">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
