@@ -1,0 +1,80 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Mapa de Infraestructura ISD Colombia" id="infraisd001">
+    <mxGraphModel dx="1300" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Zona Clientes/Terceros -->
+        <mxCell id="zona_terceros" value="Zona Clientes / Terceros (fuera del control de ISD Colombia)" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;dashed=1;fillColor=none;strokeColor=#666666;fontColor=#333333;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="260" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="dev_cliente" value="Dispositivo del Cliente&lt;div&gt;(celular / PC)&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" vertex="1" parent="1">
+          <mxGeometry x="70" y="90" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="dev_proveedor" value="Dispositivo del Proveedor&lt;div&gt;(celular / PC)&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" vertex="1" parent="1">
+          <mxGeometry x="70" y="220" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="red_telefonica" value="Red Telef\u00f3nica&lt;div&gt;(Operador m\u00f3vil)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=center;" vertex="1" parent="1">
+          <mxGeometry x="70" y="350" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Zona SaaS externos -->
+        <mxCell id="zona_saas" value="Zona Servicios en la Nube / SaaS Externos" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;dashed=1;fillColor=none;strokeColor=#666666;fontColor=#333333;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="40" width="300" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="whatsapp" value="WhatsApp Business&lt;div&gt;(infraestructura de Meta)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=center;" vertex="1" parent="1">
+          <mxGeometry x="400" y="90" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="correo" value="Correo Corporativo&lt;div&gt;(Gmail Workspace / Outlook 365)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=center;" vertex="1" parent="1">
+          <mxGeometry x="400" y="220" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="excel_cloud" value="⚠️ Hoja de C\u00e1lculo Compartida&lt;div&gt;&quot;Seguimiento Comercial&quot;&lt;/div&gt;&lt;div&gt;(Google Drive / OneDrive - instancia \u00fanica, sin backup)&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#c0392b;fontColor=#ffffff;strokeColor=#7b1f1f;align=center;boundedLbl=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="350" width="220" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Zona ISD Colombia (interna) -->
+        <mxCell id="zona_isd" value="Zona ISD Colombia (oficina)" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;dashed=1;fillColor=none;strokeColor=#666666;fontColor=#333333;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="40" width="280" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="dev_asesor" value="⚠️ Dispositivo del Asesor Comercial&lt;div&gt;(PC + celular - instancia \u00fanica)&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c0392b;fontColor=#ffffff;strokeColor=#7b1f1f;align=center;" vertex="1" parent="1">
+          <mxGeometry x="780" y="100" width="200" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Conexiones -->
+        <mxCell id="e1" value="Mensajer\u00eda (Internet)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="dev_cliente" target="whatsapp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="Correo (SMTP/IMAP)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="dev_cliente" target="correo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="Mensajer\u00eda (Internet)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="dev_proveedor" target="whatsapp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="Correo (SMTP/IMAP)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="dev_proveedor" target="correo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="Llamada de voz" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="dev_cliente" target="red_telefonica">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="Llamada de voz" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="red_telefonica" target="dev_asesor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="Mensajer\u00eda (Internet)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="whatsapp" target="dev_asesor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="Correo (SMTP/IMAP)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="correo" target="dev_asesor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="HTTPS (navegador)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="dev_asesor" target="excel_cloud">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Leyenda -->
+        <mxCell id="leyenda" value="⚠️ = Componente en riesgo (punto \u00fanico de falla / cuello de botella)" style="text;html=1;align=left;fontStyle=2;fontColor=#7b1f1f;" vertex="1" parent="1">
+          <mxGeometry x="740" y="360" width="400" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
