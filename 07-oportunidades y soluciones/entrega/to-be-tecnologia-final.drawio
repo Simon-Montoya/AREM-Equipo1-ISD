@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-09-28T00:00:00.000Z" agent="Mozilla/5.0" version="24.7.17" type="device">
+  <diagram name="TO-BE Tecnología" id="isd-to-be-tecnología">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+<mxCell id="title" value="TO-BE - Arquitectura de Tecnología | ISD Colombia" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#123B5D;fontColor=#FFFFFF;fontStyle=1;fontSize=22;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="30" y="20" width="1540" height="60" as="geometry"/></mxCell>
+<mxCell id="users" value="Clientes / personal ISD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F1F8;strokeColor=#5B7C99;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="40" y="140" width="180" height="90" as="geometry"/></mxCell>
+<mxCell id="internet" value="Internet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F2F5;strokeColor=#687182;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="270" y="150" width="150" height="70" as="geometry"/></mxCell>
+<mxCell id="waf" value="WAF / reverse proxy /\nentrada segura" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE7E7;strokeColor=#B45353;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="480" y="125" width="230" height="110" as="geometry"/></mxCell>
+<mxCell id="app" value="Hosting gestionado\nWeb + API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCEAF7;strokeColor=#3B82B5;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="790" y="105" width="250" height="130" as="geometry"/></mxCell>
+<mxCell id="idp" value="Proveedor IAM\nMFA + RBAC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE7E7;strokeColor=#9F3A38;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1090" y="90" width="220" height="120" as="geometry"/></mxCell>
+<mxCell id="db" value="Base de datos relacional\ngestionada" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCEAF7;strokeColor=#3B82B5;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="790" y="290" width="250" height="110" as="geometry"/></mxCell>
+<mxCell id="obj" value="Almacenamiento de objetos\ndocumentos cifrados" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E8FF;strokeColor=#8750A5;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1090" y="270" width="250" height="120" as="geometry"/></mxCell>
+<mxCell id="search" value="Servicio de búsqueda/validación\nreglas + semántica" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#4C8A4B;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="480" y="310" width="230" height="120" as="geometry"/></mxCell>
+<mxCell id="external" value="Proveedores / APIs externas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4D6;strokeColor=#C5901E;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1500" y="135" width="90" height="120" as="geometry"/></mxCell>
+<mxCell id="logs" value="Logs / auditoría / monitoreo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F2F5;strokeColor=#687182;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="480" y="500" width="230" height="110" as="geometry"/></mxCell>
+<mxCell id="backup" value="Backups cifrados\n+ recuperación probada" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F2F5;strokeColor=#687182;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="790" y="500" width="250" height="110" as="geometry"/></mxCell>
+<mxCell id="secrets" value="Gestión de secretos\n+ variables seguras" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE7E7;strokeColor=#9F3A38;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1090" y="480" width="250" height="110" as="geometry"/></mxCell>
+<mxCell id="ci" value="Despliegue controlado\npruebas + versionado" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F1F8;strokeColor=#5B7C99;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1090" y="650" width="250" height="90" as="geometry"/></mxCell>
+<mxCell id="controls" value="Controles transversales:\nTLS, mínimo privilegio, validación de entrada, rate limiting,\nversionado, auditoría y cifrado" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9E6;strokeColor=#C59A2E;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="450" y="690" width="590" height="100" as="geometry"/></mxCell>
+<mxCell id="t1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="users" target="internet"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="internet" target="waf"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t3" value="HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="waf" target="app"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t4" value="AuthN/AuthZ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="app" target="idp"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t5" value="Datos" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="app" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t6" value="Documentos" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="app" target="obj"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t7" value="Validación" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="app" target="search"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t8" value="Fuentes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="search" target="external"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t9" value="Datos" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="external" target="search"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t10" value="Eventos" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="app" target="logs"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t11" value="Copias" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="db" target="backup"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t12" value="Copias" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="obj" target="backup"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t13" value="Secretos" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="app" target="secrets"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t14" value="Despliegue" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ci" target="app"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="controls" target="app"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="controls" target="db"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="controls" target="obj"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="t18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="controls" target="idp"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
